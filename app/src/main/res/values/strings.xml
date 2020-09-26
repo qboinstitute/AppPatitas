@@ -14,4 +14,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="valnavvoluntario">Voluntario</string>
     <string name="valnavlistmascota">Mascotas Perdidas</string>
+    <string name="valetusuario">Ingrese su usuario</string>
+    <string name="valetpassword">Ingrese su password</string>
+    <string name="valchkrecordar">Recordar Información</string>
+    <string name="valbtnlogin">Iniciar Sesión</string>
+    <string name="valbtnregistrar">Registrarme</string>
 </resources>
