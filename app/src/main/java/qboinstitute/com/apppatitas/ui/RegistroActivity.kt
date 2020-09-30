@@ -1,12 +1,17 @@
 package qboinstitute.com.apppatitas.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import com.android.volley.Request
 import com.android.volley.RequestQueue
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_registro.*
+import org.json.JSONObject
 import qboinstitute.com.apppatitas.R
 
 class RegistroActivity : AppCompatActivity() {
@@ -17,6 +22,44 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
         queue = Volley.newRequestQueue(this)
+        btnirlogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+        btnregistrarme.setOnClickListener {
+            btnregistrarme.isEnabled = false
+            if(validarFormulario(it)){
+                RegistrarUsuarioWS(it)
+            }else{
+                btnregistrarme.isEnabled = true
+            }
+        }
+    }
+
+    private fun RegistrarUsuarioWS(vista: View) {
+        val urlwsregistro = "http://www.kreapps.biz/patitas/persona.php"
+        val parametros = JSONObject()
+        parametros.put("nombres", etnombrereg.text.toString())
+        parametros.put("apellidos", etapellidoreg.text.toString())
+        parametros.put("email", etemailreg.text.toString())
+        parametros.put("celular", etcelularreg.text.toString())
+        parametros.put("usuario", etusuarioreg.text.toString())
+        parametros.put("password", etpasswordreg.text.toString())
+        val request = JsonObjectRequest(
+            Request.Method.PUT,
+            urlwsregistro,
+            parametros,{response->
+                if(response.getBoolean("rpta")){
+                    setearControles()
+                }
+                mostrarMensaje(vista, response.getString("mensaje"))
+                btnregistrarme.isEnabled = true
+            },{
+                Log.e("REGISTRO", it.message.toString())
+                btnregistrarme.isEnabled = true
+            }
+        )
+        queue.add(request)
     }
 
     private fun validarFormulario(vista: View): Boolean{
