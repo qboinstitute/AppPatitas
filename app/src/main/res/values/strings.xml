@@ -19,4 +19,13 @@
     <string name="valchkrecordar">Recordar Información</string>
     <string name="valbtnlogin">Iniciar Sesión</string>
     <string name="valbtnregistrar">Registrarme</string>
+    <string name="valtituloregistro">REGISTRARME</string>
+    <string name="valetnombrereg">Ingrese su nombre</string>
+    <string name="valetapellidoreg">Ingrese su apellido</string>
+    <string name="valetemailreg">Ingrese su email</string>
+    <string name="valetcelularreg">Ingrese su número de celular</string>
+    <string name="valetusuarioreg">Ingrese su usuario</string>
+    <string name="valetpasswordreg">Ingrese su password</string>
+    <string name="valbtnregistrarme">REGISTRAR USUARIO</string>
+    <string name="valbtnirlogin">VOLVER A LOGIN</string>
 </resources>
