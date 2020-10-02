@@ -34,5 +34,6 @@
     <string name="valbtnregvoluntario">REGISTRARME COMO VOLUNTARIO</string>
     <string name="valesvoluntario">GRACIAS POR SER VOLUNTARIO</string>
     <string name="valerrorterminos">Acepte los términos para ser voluntario.</string>
+    <string name="action_salir">Salir</string>
 
 </resources>
