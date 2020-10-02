@@ -28,4 +28,5 @@
     <string name="valetpasswordreg">Ingrese su password</string>
     <string name="valbtnregistrarme">REGISTRAR USUARIO</string>
     <string name="valbtnirlogin">VOLVER A LOGIN</string>
+    <string name="valtvtituvoluntario">ÚNETE A NUESTRO EQUIPO!</string>
 </resources>
